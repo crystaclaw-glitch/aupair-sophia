@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sophia Azzahra (Sophia) — Au Pair Portfolio</title>
+  <meta name="description" content="Hello, I'm Sophia. An Indonesian girl with a creative heart, a love for little adventures, and a dream of discovering the world, one family at a time." />
+  <meta name="theme-color" content="#100D0D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fun.css" />
+</head>
+<body>
+
+  <!-- Reusable illustrations -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="butterfly" viewBox="0 0 200 180">
+        <g fill="rgba(242,201,205,.10)" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M100 88 C84 40 36 10 10 30 C-6 44 10 86 52 98 C30 108 28 142 56 150 C80 158 96 124 100 100 Z"/>
+          <path d="M100 88 C116 40 164 10 190 30 C206 44 190 86 148 98 C170 108 172 142 144 150 C120 158 104 124 100 100 Z"/>
+          <path d="M100 84 C92 62 70 42 44 38 M100 90 C84 80 56 76 30 62 M100 96 C80 96 62 104 52 98 M100 104 C84 114 70 128 64 142" fill="none" opacity=".7"/>
+          <path d="M100 84 C108 62 130 42 156 38 M100 90 C116 80 144 76 170 62 M100 96 C120 96 138 104 148 98 M100 104 C116 114 130 128 136 142" fill="none" opacity=".7"/>
+          <path d="M100 70 L100 128" stroke-width="3"/>
+          <path d="M100 70 C96 50 88 38 78 30 M100 70 C104 50 112 38 122 30" fill="none"/>
+        </g>
+      </symbol>
+      <symbol id="flower" viewBox="0 0 60 60">
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <ellipse cx="30" cy="14" rx="7" ry="12"/>
+          <ellipse cx="30" cy="46" rx="7" ry="12"/>
+          <ellipse cx="14" cy="30" rx="12" ry="7"/>
+          <ellipse cx="46" cy="30" rx="12" ry="7"/>
+          <circle cx="30" cy="30" r="4"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Scroll progress: a little butterfly flies along the top -->
+  <div class="progress" aria-hidden="true">
+    <span class="bar" id="bar"></span>
+    <svg class="pbf" id="pbf"><use href="#butterfly"/></svg>
+  </div>
+
+  <!-- Ambient floating decorations -->
+  <div class="floaters" aria-hidden="true">
+    <svg class="fl f1"><use href="#butterfly"/></svg>
+    <svg class="fl f2"><use href="#butterfly"/></svg>
+    <svg class="fl f3"><use href="#flower"/></svg>
+    <svg class="fl f4"><use href="#flower"/></svg>
+  </div>
+
+  <div class="frame">
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <a href="#home" class="brand">Sophia<span>.</span></a>
+      <div class="lang" id="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="on" title="English">EN</button>
+        <button type="button" data-lang="nl" title="Nederlands">NL</button>
+        <button type="button" data-lang="de" title="Deutsch">DE</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <nav class="links" id="links">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About Me</a>
+        <a href="#why" data-i18n="nav.why">Why Au Pair</a>
+        <a href="#experience" data-i18n="nav.exp">My Experience</a>
+        <a href="#gallery" data-i18n="nav.gal">Gallery</a>
+        <a href="#contact" class="pill" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text reveal">
+        <p class="label" data-i18n="h.label">Dear host family 💌</p>
+        <h1 data-i18n="h.title">Hello, I'm <em>Sophia.</em></h1>
+        <p class="sub" data-i18n="h.sub">An Indonesian girl with a creative heart, a love for little adventures, and a dream of discovering the world, one family at a time.</p>
+        <p class="typer"><span data-i18n="h.next">Maybe your next</span> <span class="typed" id="typed"></span><span class="caret">|</span></p>
+        <a href="#about" class="btn glow" data-i18n="h.cta">Get to Know Me <span>→</span></a>
+        <p class="tagline" data-i18n="h.tag">Made of curiosity, creativity, and a little wanderlust.</p>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="portrait" id="portrait">
+          <img src="images/Sophia.jpg" alt="Portrait of Sophia" onerror="this.parentElement.classList.add('empty'); this.remove();" />
+          <span class="ph-text">Your photo here<small>images/Sophia.jpg</small></span>
+        </div>
+        <button class="hero-bf-btn" id="heroBf" aria-label="Click the butterfly!" title="Psst… click me!">
+          <svg class="hero-bf" aria-hidden="true"><use href="#butterfly"/></svg>
+        </button>
+        <span class="hint" data-i18n="h.hint">psst… try clicking the butterfly 🦋</span>
+      </div>
+      <div class="hero-curve" aria-hidden="true"></div>
+    </section>
+
+    <main class="light">
+
+      <!-- ABOUT + PHOTO -->
+      <section id="about" class="panel reveal">
+        <div class="two">
+          <div>
+            <p class="label dark" data-i18n="nav.about">About Me</p>
+            <h2 data-i18n="a.title">Hi, I'm Sophia, <em>nice to meet you!</em></h2>
+            <p data-i18n="a.p1">I'm from Indonesia, Southeast Asia. I'm the second of three siblings and the only daughter in my family (yes, I'm used to being outnumbered 😄).</p>
+            <p data-i18n="a.p2">I graduated in Manufacturing Automation Engineering and Mechatronics, but beyond my technical background, I'm someone who loves creativity, crafting, volunteering, cooking, and spending meaningful time with children.</p>
+            <p data-i18n="a.p3">I enjoy making things with my hands, exploring new ideas, learning from different people, and finding happiness in the little things. I believe life gets more beautiful when we keep learning, sharing, and creating memories with others.</p>
+          </div>
+          <figure class="polaroid" id="polaroid">
+            <span class="tape" aria-hidden="true"></span>
+            <div class="pic">
+              <img src="images/Sophia.jpg" alt="Sophia" onerror="this.parentElement.classList.add('empty'); this.remove();" />
+              <span class="ph-text">Your photo here<small>images/Sophia.jpg</small></span>
+            </div>
+            <figcaption data-i18n="a.cap">That's me! 👋</figcaption>
+          </figure>
+        </div>
+
+        <p class="mini-hint" data-i18n="a.hint">Tap the cards to learn a bit more about me ↓</p>
+        <div class="flips">
+          <button class="flip" type="button"><span class="flip-in"><span class="face front"><i>🧸</i><span data-i18n="f1.q">Sibling order?</span></span><span class="face back" data-i18n="f1.a">Second of three, and the only daughter!</span></span></button>
+          <button class="flip" type="button"><span class="flip-in"><span class="face front"><i>👶</i><span data-i18n="f2.q">Experience with little ones?</span></span><span class="face back" data-i18n="f2.a">Proud aunt of three, plus volunteering with kids.</span></span></button>
+          <button class="flip" type="button"><span class="flip-in"><span class="face front"><i>⚙️</i><span data-i18n="f3.q">What did I study?</span></span><span class="face back" data-i18n="f3.a">Manufacturing Automation Engineering &amp; Mechatronics.</span></span></button>
+          <button class="flip" type="button"><span class="flip-in"><span class="face front"><i>🌸</i><span data-i18n="f4.q">What do I love?</span></span><span class="face back" data-i18n="f4.a">Crafting, volunteering, cooking, and little adventures.</span></span></button>
+        </div>
+      </section>
+
+      <!-- WHY AU PAIR -->
+      <section id="why" class="panel why reveal">
+        <div class="why-art" aria-hidden="true">
+          <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F2C9CD"/><stop offset="1" stop-color="#F5E9E5"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="260" fill="url(#sky)"/>
+            <circle cx="300" cy="70" r="34" fill="#fff" opacity=".55"/>
+            <path d="M0 200 L70 110 L110 160 L170 80 L250 190 L310 130 L400 210 L400 260 L0 260Z" fill="#C98F99" opacity=".55"/>
+            <path d="M0 225 L90 150 L150 205 L230 140 L320 215 L400 170 L400 260 L0 260Z" fill="#a8707a" opacity=".6"/>
+            <path d="M170 80 L150 108 L165 104 L180 112 L190 100Z M70 110 L56 130 L70 126 L84 134Z" fill="#fff" opacity=".85"/>
+            <g fill="#fff" opacity=".9"><circle cx="50" cy="40" r="2"/><circle cx="120" cy="60" r="1.5"/><circle cx="210" cy="30" r="2"/><circle cx="350" cy="120" r="1.5"/><circle cx="260" cy="90" r="1.5"/></g>
+          </svg>
+          <span class="pin" style="top:46%;left:30%">❄</span>
+          <span class="snow" id="snowBtn"></span>
+        </div>
+        <div class="why-text">
+          <p class="label dark" data-i18n="w.label">Why Au Pair?</p>
+          <h2 data-i18n="w.title">A Little Dream, <em>A Big Adventure.</em></h2>
+          <p data-i18n="w.p1">Because I want to see the world with my own eyes, not just through pictures. One of my biggest dreams is to travel around the world, experience different seasons, and finally feel the snow in my hands ❄️ (I've never touched real snow. Please be patient with my excitement!)</p>
+          <p data-i18n="w.p2">I'm curious about everything new: cultures, languages, traditions, food, and ways of living. I love learning, and I believe living with a host family is one of the most meaningful ways to understand another part of the world.</p>
+          <p data-i18n="w.p3">But there's another reason: I genuinely enjoy being around children. Playing with them, helping them discover new things, and watching their little personalities grow makes me really happy.</p>
+          <p data-i18n="w.p4">I also have a personal goal: by the age of 30, I hope to have visited at least 10 countries. Becoming an Au Pair is one of the first meaningful steps I'm ready to take toward it.</p>
+          <blockquote data-i18n="w.quote">Some dreams may seem small to others, but to me, every new country is a whole new world to discover.</blockquote>
+        </div>
+
+        <div class="passport">
+          <h3 data-i18n="w.pp">My Passport Goal ✈️</h3>
+          <p class="mini-hint" data-i18n="w.pphint">Tap a stamp to fill my passport. 10 countries before I'm 30!</p>
+          <div class="stamps" id="stamps"></div>
+          <p class="stamp-msg" id="stampMsg">Empty passport… for now.</p>
+        </div>
+      </section>
+
+      <!-- ENGLISH -->
+      <section id="english" class="panel english reveal">
+        <p class="label dark" data-i18n="e.label">Let's talk!</p>
+        <h2 data-i18n="e.title">My English Level: <em>Intermediate.</em></h2>
+        <p class="lead-c" data-i18n="e.lead">Honest answer: my English is at an intermediate level. I can chat about everyday life, and I keep practicing and learning every day. If I don't understand something, I'll simply ask, and I'd love to improve even more while living with an English-speaking family.</p>
+
+        <div class="meter" role="img" aria-label="English level: Intermediate">
+          <div class="lvl" data-i18n="e.l1">Beginner</div>
+          <div class="lvl" data-i18n="e.l2">Elementary</div>
+          <div class="lvl on" data-i18n="e.l3">Intermediate<b>← Sophia is here</b></div>
+          <div class="lvl" data-i18n="e.l4">Upper-Int.</div>
+          <div class="lvl" data-i18n="e.l5">Advanced</div>
+        </div>
+
+        <h3 class="center-h" data-i18n="e.words">Bonus: 4 Indonesian words to start our friendship 🇮🇩</h3>
+        <p class="mini-hint" data-i18n="e.hint">Tap a card to see what it means.</p>
+        <div class="words">
+          <button class="flip" type="button"><span class="flip-in"><span class="face front big">Halo!</span><span class="face back" data-i18n="e.w1">Hello!</span></span></button>
+          <button class="flip" type="button"><span class="flip-in"><span class="face front big">Selamat pagi</span><span class="face back" data-i18n="e.w2">Good morning</span></span></button>
+          <button class="flip" type="button"><span class="flip-in"><span class="face front big">Terima kasih</span><span class="face back" data-i18n="e.w3">Thank you</span></span></button>
+          <button class="flip" type="button"><span class="flip-in"><span class="face front big">Sampai jumpa</span><span class="face back" data-i18n="e.w4">See you later</span></span></button>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="block">
+        <div class="head reveal">
+          <p class="label dark" data-i18n="x.label">What can I bring to your family?</p>
+          <h2 data-i18n="x.title">Little Hands, <em>Big Responsibilities.</em></h2>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <svg class="ico"><use href="#flower"/></svg>
+            <h3 data-i18n="x1.t">My Experience with Children</h3>
+            <p data-i18n="x1.p1">I enjoy spending time with children, and I believe every child deserves to feel supported, understood, and encouraged.</p>
+            <p data-i18n="x1.p2">Through volunteering, I once got to be a big sister figure to a child at a volunteer event. We did a painting activity together, and our work even won best painting! 🎨</p>
+            <p data-i18n="x1.p3">But honestly, winning wasn't the best part. What mattered was helping that child discover their creativity, see their own potential, and feel confident expressing themselves.</p>
+            <p data-i18n="x1.p4">I love encouraging children to explore their talents and take little steps toward their own achievements.</p>
+          </article>
+          <article class="card reveal">
+            <svg class="ico"><use href="#butterfly"/></svg>
+            <h3 data-i18n="x2.t">A Proud Aunt of Three</h3>
+            <p data-i18n="x2.p1">I'm also an aunt to three wonderful nieces and nephews!</p>
+            <p data-i18n="x2.p2">I'm actively involved in their everyday lives: helping them eat, playing, learning new things, keeping them company, and yes, handling tantrums and understanding big emotions too.</p>
+            <p data-i18n="x2.p3">Being around little ones is a familiar part of my life. Every child has a different personality, different needs, and different ways of expressing themselves.</p>
+            <p data-i18n="x2.p4">I don't expect every child to behave the same way. I believe patience, understanding, and consistency matter most.</p>
+          </article>
+          <article class="card reveal">
+            <svg class="ico"><use href="#flower"/></svg>
+            <h3 data-i18n="x3.t">A Creative Playmate</h3>
+            <p data-i18n="x3.p1">Crafting is one of my favorite hobbies! I love making handmade flowers, little decorations, and creative projects.</p>
+            <p data-i18n="x3.p2">I'd love to bring that creativity into everyday activities with children: drawing, painting, paper crafts, storytelling, and anything that sparks imagination.</p>
+            <p data-i18n="x3.p3">Learning doesn't always have to happen through books. Sometimes the best lessons come from playing and creating together.</p>
+          </article>
+          <article class="card reveal">
+            <svg class="ico"><use href="#butterfly"/></svg>
+            <h3 data-i18n="x4.t">A Helping Hand at Home</h3>
+            <p data-i18n="x4.p0">I'm happy to help with light household tasks in everyday family life, such as:</p>
+            <ul>
+              <li data-i18n="x4.l1">Washing dishes.</li>
+              <li data-i18n="x4.l2">Folding and organizing laundry.</li>
+              <li data-i18n="x4.l3">Putting clean clothes away.</li>
+              <li data-i18n="x4.l4">Cleaning the dining table after meals.</li>
+              <li data-i18n="x4.l5">Tidying up toys and personal belongings.</li>
+              <li data-i18n="x4.l6">Keeping shared spaces neat and organized.</li>
+              <li data-i18n="x4.l7">Returning household items to their proper places.</li>
+            </ul>
+            <p data-i18n="x4.p1">I value cleanliness and organization, and I believe a comfortable home is something everyone contributes to.</p>
+          </article>
+        </div>
+
+        <!-- Playdate picker -->
+        <div class="playdate reveal">
+          <h3 data-i18n="pd.title">Pick a playdate with Sophia 🎲</h3>
+          <p class="mini-hint" data-i18n="pd.hint">What would your kids love to do?</p>
+          <div class="pd-tabs" id="pdTabs" role="tablist">
+            <button role="tab" class="on" data-k="paint" data-i18n="pd.paint">🎨 Paint</button>
+            <button role="tab" data-k="craft" data-i18n="pd.craft">🌸 Craft</button>
+            <button role="tab" data-k="story" data-i18n="pd.story">📖 Story time</button>
+            <button role="tab" data-k="cook" data-i18n="pd.cook">🍳 Cook</button>
+            <button role="tab" data-k="tidy" data-i18n="pd.tidy">🧸 Tidy-up game</button>
+          </div>
+          <div class="pd-body" id="pdBody" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- CHOOSE ME -->
+      <section id="choose" class="panel choose reveal">
+        <p class="label dark" data-i18n="c.label">Why should you choose me?</p>
+        <h2 data-i18n="c.title">A Heart Full of Curiosity, <em>A Mind Ready to Learn.</em></h2>
+        <div class="two">
+          <div>
+            <p data-i18n="c.p1">I know being an Au Pair is more than traveling abroad. It means taking responsibility, adapting to a new environment, respecting another family's lifestyle, and being someone they can trust.</p>
+            <p data-i18n="c.p2">My dream of exploring the world gives me the courage to take this big step, but I don't want to chase it unprepared. I've spent time building my skills, gaining experience with children, and becoming more independent.</p>
+            <p data-i18n="c.p3">I don't smoke, vape, or use drugs. I value a healthy lifestyle and want to stay active enough to enjoy all the adventures ahead (and to keep up with energetic kids!).</p>
+            <p data-i18n="c.p4">I'm not looking for a shortcut to see the world. I'm looking for a meaningful experience where I can contribute, learn, and grow.</p>
+          </div>
+          <div>
+            <p data-i18n="c.promise"><b>If I join your family, I promise to:</b></p>
+            <ul class="ticks">
+              <li data-i18n="c.l1">Respect your family rules, values, and cultural traditions.</li>
+              <li data-i18n="c.l2">Be responsible, trustworthy, and respectful.</li>
+              <li data-i18n="c.l3">Communicate openly and honestly.</li>
+              <li data-i18n="c.l4">Take my childcare responsibilities seriously.</li>
+              <li data-i18n="c.l5">Be willing to learn and adapt.</li>
+              <li data-i18n="c.l6">Respect your home and contribute positively to everyday family life.</li>
+            </ul>
+          </div>
+        </div>
+        <blockquote class="center" data-i18n="c.quote">I want to travel far, but I also want to leave kindness wherever I go.</blockquote>
+      </section>
+
+      <!-- HOST FAMILY + FAQ -->
+      <section id="family" class="block">
+        <div class="head reveal">
+          <p class="label dark" data-i18n="fam.label">My dream host family</p>
+          <h2 data-i18n="fam.title">A Home <em>Away From Home.</em></h2>
+          <p class="lead" data-i18n="fam.lead">I hope to find a host family who welcomes me not only as an Au Pair, but as a meaningful part of everyday life. I'd love a home where we share stories, learn from each other, explore cultures, and make beautiful memories together.</p>
+        </div>
+        <div class="cards four">
+          <article class="card small reveal">
+            <h3 data-i18n="fm1.t">A loving and welcoming family</h3>
+            <p data-i18n="fm1.p">I hope to find a family who treats me with kindness, respect, and openness, just as I'll treat them.</p>
+          </article>
+          <article class="card small reveal">
+            <h3 data-i18n="fm2.t">Children with different needs are welcome</h3>
+            <p data-i18n="fm2.p">I'm open to caring for children with special needs or disabilities. Every child is unique and deserves love, patience, and room to grow. I'm happy to learn about their individual needs and follow your guidance.</p>
+          </article>
+          <article class="card small reveal">
+            <h3 data-i18n="fm3.t">Single mothers are welcome</h3>
+            <p data-i18n="fm3.p">I'm open to joining a single-mother household. I'm comfortable with that family arrangement and would be happy to be a supportive part of it.</p>
+          </article>
+          <article class="card small reveal">
+            <h3 data-i18n="fm4.t">Languages and culture</h3>
+            <p data-i18n="fm4.p">I'd love to join an English-speaking household so we can communicate comfortably. If your family speaks another language at home, I'd be genuinely excited to learn it! A new language is a beautiful way to understand a culture.</p>
+          </article>
+        </div>
+
+        <div class="faq reveal">
+          <h3 data-i18n="faq.title">Questions host families usually ask 🙋‍♀️</h3>
+          <details><summary data-i18n="q1">Does Sophia have experience with children?</summary><p data-i18n="a1">Yes! I'm a proud aunt of three, involved in their everyday care, and I've volunteered with children too, including being a big sister figure at a painting event.</p></details>
+          <details><summary data-i18n="q2">Does she smoke, vape, or use drugs?</summary><p data-i18n="a2">No, never. I value a healthy lifestyle.</p></details>
+          <details><summary data-i18n="q3">Will she help around the house?</summary><p data-i18n="a3">Of course. Dishes, laundry, tidying toys, cleaning up after meals, and keeping shared spaces neat. I believe a comfy home is a team effort.</p></details>
+          <details><summary data-i18n="q4">Is she open to children with special needs?</summary><p data-i18n="a4">Yes. I'd be happy to learn each child's needs and follow your family's guidance.</p></details>
+          <details><summary data-i18n="q5">Is a single-mother household okay?</summary><p data-i18n="a5">Absolutely. I'd be happy to be a supportive part of the household.</p></details>
+          <details><summary data-i18n="q6">How is her English?</summary><p data-i18n="a6">Intermediate. I can handle everyday conversations and I'm always improving. I'd love to learn your family's language, too!</p></details>
+          <details><summary data-i18n="q7">Why does she want to be an Au Pair?</summary><p data-i18n="a7">To experience the world, its cultures, languages and seasons, while doing something I truly enjoy: spending time with children.</p></details>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="block">
+        <div class="head reveal">
+          <p class="label dark" data-i18n="gal.label">My little world</p>
+          <h2 data-i18n="gal.title">A Glimpse Into <em>My Little World.</em></h2>
+        </div>
+
+        <div class="gal-group reveal">
+          <h3 data-i18n="gal.h1">Little Moments, Big Memories</h3>
+          <div class="masonry" id="g-moments"></div>
+          <p class="note" data-i18n="gal.note">*Some children's faces have been blurred to protect their privacy, with permission from their parents or guardians.</p>
+        </div>
+        <div class="gal-group reveal">
+          <h3 data-i18n="gal.h2">Made With Love</h3>
+          <div class="masonry" id="g-made"></div>
+        </div>
+        <div class="gal-group reveal">
+          <h3 data-i18n="gal.h3">Life Through My Eyes</h3>
+          <div class="masonry" id="g-life"></div>
+        </div>
+      </section>
+
+      <!-- CLOSING NOTE -->
+      <section id="note" class="note-block reveal">
+        <svg class="note-bf" aria-hidden="true"><use href="#butterfly"/></svg>
+        <p class="label dark" data-i18n="n.label">A little note before we meet</p>
+        <h2 data-i18n="n.title">If you've made it this far, <em>thank you!</em></h2>
+        <p data-i18n="n.p1">Thank you for taking the time to get to know me. I'd be genuinely happy to meet you and learn more about your family. If you feel I might be a good fit for your home, I'd love to have an interview or continue with the next steps so we can get to know each other better.</p>
+        <p data-i18n="n.p2">After all, finding the right match is about more than qualifications. It's about understanding, trust, comfort, and connection.</p>
+        <p class="serif-big" data-i18n="n.big">Maybe this is where our little adventure begins.</p>
+        <div class="cta-row">
+          <a class="btn dark-btn" id="chatBtn" href="#contact" data-i18n="n.chat">Let's Have a Chat</a>
+          <a class="btn ghost" href="#contact" data-i18n="n.contact">Contact Me</a>
+        </div>
+        <button class="confetti-btn" id="confettiBtn" type="button" data-i18n="n.confetti">🎉 Press for a little surprise</button>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="panel contact reveal">
+        <div>
+          <p class="label dark" data-i18n="nav.contact">Contact</p>
+          <h2 data-i18n="ct.title">Let's <em>say hello.</em></h2>
+        </div>
+        <dl class="details">
+          <div><dt data-i18n="ct.name">Name</dt><dd>Sophia Azzahra (Sophia)</dd></div>
+          <div><dt data-i18n="ct.nat">Nationality</dt><dd data-i18n="ct.natv">Indonesian 🇮🇩</dd></div>
+          <div><dt data-i18n="ct.loc">Location</dt><dd data-i18n="ct.locv">Indonesia, Southeast Asia</dd></div>
+          <div><dt data-i18n="ct.eng">English</dt><dd data-i18n="ct.engv">Intermediate</dd></div>
+          <div><dt>WhatsApp</dt><dd id="waText">[INSERT WHATSAPP NUMBER]</dd></div>
+          <div><dt data-i18n="ct.mail">Email</dt><dd id="mailText">[INSERT EMAIL ADDRESS]</dd></div>
+        </dl>
+        <div class="cta-row">
+          <a class="btn dark-btn" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" id="mailBtn" href="#" data-i18n="ct.mail">Email</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="serif-big" data-i18n="ft.big">Made with love, dreams, and a little bit of wanderlust.</p>
+      <p class="copy" data-i18n="ft.copy">© 2026 Sophia Azzahra. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+    <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="i18n.js"></script>
+  <script src="fun.js"></script>
+</body>
+</html>
