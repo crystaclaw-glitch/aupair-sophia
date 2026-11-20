@@ -4,8 +4,8 @@
 
 // Kontak: isi nomor WhatsApp (format internasional, tanpa + atau spasi) dan email
 const CONTACT = {
-  whatsapp: "",              // contoh: "6281234567890"
-  email: "",                 // contoh: "Sophia@email.com"
+  whatsapp: "",              // contoh: "6281297793393"
+  email: "",                 // contoh: "sphiazzahara@email.com"
   whatsappMessage: "Hello Sophia! I came across your Au Pair portfolio and would love to get to know you."
 };
 
